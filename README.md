@@ -1,51 +1,87 @@
-# AI PDF Q&A Assistant
+# 📄 AI PDF Q&A Assistant
 
-Upload any PDF and ask questions about it — powered by Claude API.
+An AI-powered web app that lets users upload any PDF document and ask natural-language questions about its content. Built with Python, Streamlit, and the Groq API (Llama 3.3 70B).
 
-## What this project does
-- User PDF upload karta hai (resume, notes, report, kuch bhi)
-- App PDF se text nikalta hai
-- User question poochta hai us document ke baare mein
-- Claude API document padh kar answer deta hai
+🔗 **Live Demo:** [Add your Streamlit Cloud link here]
 
-## Tech Stack
-- **Python** — core language
-- **Streamlit** — web UI (bina HTML/CSS ke web app banane ke liye)
-- **pypdf** — PDF se text extract karne ke liye
-- **Anthropic API (Claude)** — question answering ke liye (LLM)
+---
 
-## How to run this locally
+## ✨ Features
 
-1. Install dependencies:
+- Upload any PDF and extract its text content automatically
+- Ask natural-language questions about the document
+- Get accurate, context-grounded answers powered by an LLM (Llama 3.3 70B via Groq)
+- Clean, simple UI built with Streamlit — no frontend code required
+- Fast inference thanks to Groq's LPU-based API
+
+## 🛠️ Tech Stack
+
+| Component        | Technology                     |
+|-------------------|---------------------------------|
+| Language          | Python                          |
+| Web UI            | Streamlit                       |
+| PDF Parsing       | pypdf                           |
+| LLM Provider      | Groq API (Llama 3.3 70B)        |
+| Deployment        | Streamlit Community Cloud       |
+
+## 🚀 How It Works
+
+1. User uploads a PDF file through the Streamlit interface
+2. The app extracts raw text from the PDF using `pypdf`
+3. When the user asks a question, the extracted text + question are sent as a prompt to the Groq API
+4. The LLM generates an answer grounded strictly in the document content
+5. The answer is displayed back to the user in real time
+
+## 📦 Installation & Local Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   cd YOUR_REPO_NAME
    ```
+
+2. Install dependencies:
+   ```bash
    pip install -r requirements.txt
    ```
 
-2. Run the app:
+3. Add your Groq API key. Create a file at `.streamlit/secrets.toml` with:
+   ```toml
+   GROQ_API_KEY = "your_api_key_here"
    ```
+   Get a free API key at [console.groq.com/keys](https://console.groq.com/keys).
+
+4. Run the app:
+   ```bash
    streamlit run app.py
    ```
 
-3. Browser mein app khul jayega (usually http://localhost:8501)
+5. Open the local URL shown in the terminal (usually `http://localhost:8501`).
 
-4. Sidebar mein apni Anthropic API key daalo (free key yaha se milti hai: https://console.anthropic.com/)
+## ☁️ Deployment
 
-5. PDF upload karo aur question poocho!
+This app is deployed on **Streamlit Community Cloud**. To deploy your own copy:
 
-## How to explain this in an interview
+1. Push this repo to your GitHub account
+2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub
+3. Click "New app", select this repo and `app.py` as the entry point
+4. Under "Advanced settings → Secrets", add:
+   ```toml
+   GROQ_API_KEY = "your_api_key_here"
+   ```
+5. Click Deploy
 
-Yeh project bolo ki:
-- "Maine ek document Q&A tool banaya hai jo PDF se text extract karke, LLM (Claude API) ko context ke saath prompt bhejta hai, aur relevant answer return karta hai."
-- "Streamlit use kiya UI ke liye kyunki fast prototyping ke liye best hai."
-- "Prompt engineering ka concept use kiya — document ka content system prompt mein inject karke model ko batata hoon ki sirf usi document se answer de."
-- Agar poochein "isko improve kaise karoge?" — bolo: "Bade documents ke liye main RAG (Retrieval Augmented Generation) add kar sakta hoon — chunking + embeddings + vector database (jaise FAISS ya Pinecone), taaki poora document ek saath API mein na bhejna pade."
+## 🔮 Future Improvements
 
-Yeh answer dikhata hai ki tumhe basic implementation ke saath-saath advanced concept (RAG) ka bhi pata hai — even agar tumne implement nahi kiya, mention karna smart lagta hai.
+- Add RAG (Retrieval-Augmented Generation) with vector embeddings for handling larger documents efficiently
+- Support multiple PDF uploads and cross-document search
+- Add conversation history / follow-up question support
+- Support additional file formats (DOCX, TXT)
 
-## Next steps (optional, agar time mile)
-- Isko free deploy karo Streamlit Community Cloud pe (free hai, 10 min lagte hain) — taaki live link resume mein daal sako
-- GitHub pe push karo with a good README (jaisa yeh hai)
-- LinkedIn pe short demo video/GIF post karo
+## 📄 License
 
-## Resume mein kaise likhen
-> Built an AI-powered PDF Q&A application using Python, Streamlit, and Claude API that extracts document content and answers user queries via LLM-based question answering, demonstrating practical application of prompt engineering and API integration.
+This project is open source and available under the MIT License.
+
+---
+
+*Built as a learning project to explore LLM API integration and prompt engineering.*
