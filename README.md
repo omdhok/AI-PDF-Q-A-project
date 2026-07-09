@@ -1,12 +1,12 @@
-# 📄 AI PDF Q&A Assistant
+#  AI PDF Q&A Assistant
 
 An AI-powered web app that lets users upload any PDF document and ask natural-language questions about its content. Built with Python, Streamlit, and the Groq API (Llama 3.3 70B).
 
-🔗 **Live Demo:** [Add your Streamlit Cloud link here]
+Live Demo: [Add your Streamlit Cloud link here]
 
 ---
 
-## ✨ Features
+## Features
 
 - Upload any PDF and extract its text content automatically
 - Ask natural-language questions about the document
@@ -14,17 +14,12 @@ An AI-powered web app that lets users upload any PDF document and ask natural-la
 - Clean, simple UI built with Streamlit — no frontend code required
 - Fast inference thanks to Groq's LPU-based API
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Component        | Technology                     |
-|-------------------|---------------------------------|
-| Language          | Python                          |
-| Web UI            | Streamlit                       |
-| PDF Parsing       | pypdf                           |
-| LLM Provider      | Groq API (Llama 3.3 70B)        |
-| Deployment        | Streamlit Community Cloud       |
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5478880d-d596-47a5-87d9-57d6b230cd75" />
 
-## 🚀 How It Works
+
+##  How It Works
 
 1. User uploads a PDF file through the Streamlit interface
 2. The app extracts raw text from the PDF using `pypdf`
@@ -71,14 +66,14 @@ This app is deployed on **Streamlit Community Cloud**. To deploy your own copy:
    ```
 5. Click Deploy
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - Add RAG (Retrieval-Augmented Generation) with vector embeddings for handling larger documents efficiently
 - Support multiple PDF uploads and cross-document search
 - Add conversation history / follow-up question support
 - Support additional file formats (DOCX, TXT)
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
 
