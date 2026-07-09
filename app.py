@@ -1,27 +1,17 @@
-"""
-AI-Powered PDF Q&A Assistant
------------------------------
-Upload any PDF (resume, notes, report) and ask questions about it.
-Uses Claude API (Anthropic) to read the content and answer.
-
-Resume project by: [Your Name]
-"""
-
 import streamlit as st
 from pypdf import PdfReader
 from groq import Groq
 
-# ---------- PAGE CONFIG ----------
 st.set_page_config(page_title="AI PDF Q&A Assistant", page_icon="📄")
 st.title("📄 AI PDF Q&A Assistant")
 st.write("Upload a PDF and ask questions about it. Powered by Groq API (Llama).")
 
-# ---------- SIDEBAR: API KEY ----------
+
 st.sidebar.header("Settings")
 api_key = st.sidebar.text_input("Enter your Groq API Key", type="password")
 st.sidebar.markdown("[Get a free API key here](https://console.groq.com/keys)")
 
-# ---------- FUNCTION: EXTRACT TEXT FROM PDF ----------
+
 def extract_text_from_pdf(uploaded_file):
     reader = PdfReader(uploaded_file)
     text = ""
@@ -31,7 +21,6 @@ def extract_text_from_pdf(uploaded_file):
             text += page_text + "\n"
     return text
 
-# ---------- FUNCTION: ASK GROQ ----------
 def ask_groq(api_key, document_text, question):
     client = Groq(api_key=api_key)
 
@@ -51,7 +40,6 @@ QUESTION: {question}
     )
     return response.choices[0].message.content
 
-# ---------- MAIN APP LOGIC ----------
 uploaded_file = st.file_uploader("Upload your PDF", type=["pdf"])
 
 if uploaded_file is not None:
