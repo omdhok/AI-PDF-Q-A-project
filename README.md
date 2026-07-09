@@ -2,9 +2,7 @@
 
 An AI-powered web app that lets users upload any PDF document and ask natural-language questions about its content. Built with Python, Streamlit, and the Groq API (Llama 3.3 70B).
 
-Live Demo: [Add your Streamlit Cloud link here]
-
----
+Live Demo: https://ai-pdf-q-a-project-jns2ftgmzjxzshzfldqiv6.streamlit.app/
 
 ## Features
 
@@ -16,7 +14,12 @@ Live Demo: [Add your Streamlit Cloud link here]
 
 ## Tech Stack
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5478880d-d596-47a5-87d9-57d6b230cd75" />
+Component,Technology
+🐍 Language,Python
+🎈 Web UI,Streamlit
+📄 PDF Parsing,pypdf
+🧠 LLM Provider,Groq API (LLaMA 3.3 70B)
+☁️ Deployment,Streamlit Community Cloud
 
 
 ##  How It Works
@@ -27,7 +30,7 @@ Live Demo: [Add your Streamlit Cloud link here]
 4. The LLM generates an answer grounded strictly in the document content
 5. The answer is displayed back to the user in real time
 
-## 📦 Installation & Local Setup
+## Installation & Local Setup
 
 1. Clone the repository:
    ```bash
@@ -53,7 +56,7 @@ Live Demo: [Add your Streamlit Cloud link here]
 
 5. Open the local URL shown in the terminal (usually `http://localhost:8501`).
 
-## ☁️ Deployment
+##  Deployment
 
 This app is deployed on **Streamlit Community Cloud**. To deploy your own copy:
 
